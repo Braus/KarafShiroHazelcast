@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>parent</artifactId>
+        <groupId>backend-experiment</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>kar</artifactId>
+    <packaging>kar</packaging>
+
+    <name>Abeel :: Enterprise Platform :: :: KAR</name>
+
+    <description>Karaf archive creation</description>
+
+<!--    <dependencyManagement>-->
+<!--        <dependencies>-->
+<!--&lt;!&ndash;            <dependency>-->
+<!--                <groupId>org.apache.karaf</groupId>-->
+<!--                <artifactId>karaf</artifactId>-->
+<!--                <version>${karaf.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>&ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>org.apache.karaf</groupId>-->
+<!--                <artifactId>cellar</artifactId>-->
+<!--                <version>4.1.3</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+<!--        </dependencies>-->
+<!--    </dependencyManagement>-->
+
+    <repositories>
+        <repository>
+            <id>org.aopalliance</id>
+            <name>spring stuff</name>
+            <url>https://repo.spring.io/libs-release/</url>
+        </repository>
+        <repository>
+            <id>cellar</id>
+            <name>cellar</name>
+            <url>cellar</url>
+        </repository>
+<!--        <repository>-->
+<!--            <id>org.apache.karaf.cellar</id>-->
+<!--            <name>cellar stuff</name>-->
+<!--            <url>https://jcenter.bintray.com/</url>-->
+<!--        </repository>-->
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.karaf.tooling</groupId>
+                <artifactId>karaf-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

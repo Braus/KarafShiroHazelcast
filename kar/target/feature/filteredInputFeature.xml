@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="platform-backend-experiment-kar-features-1.0-SNAPSHOT" xmlns="http://karaf.apache.org/xmlns/features/v1.5.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.5.0 http://karaf.apache.org/xmlns/features/v1.5.0">
+    <repository>mvn:org.apache.cxf.karaf/apache-cxf/3.1.0/xml/features</repository>
+    <repository>mvn:org.apache.karaf.cellar/apache-karaf-cellar/RELEASE/xml/features</repository>
+
+    <!--    <repository>mvn:org.apache.cxf.karaf/apache-cxf/3.1.0/xml/features</repository>-->
+
+
+<!--    <feature name="platform-constraints" description="System environment constraints check" version="1.0-SNAPSHOT" start-level="30">
+        <bundle>mvn:eu.abeel.platform/constraints/3.1.0</bundle>
+    </feature>
+
+    <feature name="platform-jaas" description="Platform JAAS with LDAP" version="1.0-SNAPSHOT" start-level="40">
+        <bundle>mvn:eu.abeel.platform/ldap/3.1.0</bundle>
+        <bundle>mvn:eu.abeel.platform.jaas/api/3.1.0</bundle>
+        <bundle>mvn:eu.abeel.platform.jaas/service/3.1.0</bundle>
+&lt;!&ndash;        <configfile finalname="/etc/eu.abeel.platform.environment.ldap.service.cfg">&ndash;&gt;
+&lt;!&ndash;            mvn:eu.abeel.platform/ldap/1.0-SNAPSHOT/cfg/ldap-service&ndash;&gt;
+&lt;!&ndash;        </configfile>&ndash;&gt;
+    </feature>-->
+
+<!--    <feature name="platform-monitoring-client" description="JMX-HTTP bridge" version="1.0-SNAPSHOT" start-level="40">-->
+<!--        <feature>http</feature>-->
+<!--        <feature version="1.0-SNAPSHOT">platform-hawtio-log</feature>-->
+<!--        <config name="org.jolokia.osgi">-->
+<!--            org.jolokia.user=karaf-->
+<!--            org.jolokia.realm=karaf-->
+<!--            org.jolokia.authMode=jaas-->
+<!--        </config>-->
+<!--        <bundle>mvn:org.jolokia/jolokia-osgi/1.6.2</bundle>-->
+<!--    </feature>-->
+
+
+    <feature version="1.0.0" name="karaf-stuff">
+        <feature>scr</feature>
+        <feature>felix-http</feature>
+        <feature>aries-blueprint</feature>
+<!--        <feature>platform-constraints</feature>-->
+<!--        <feature>platform-jaas</feature>-->
+        <feature>platform-dosgi</feature>
+        <bundle>mvn:org.apache.camel/camel-core/2.24.1</bundle>
+        <bundle>mvn:org.apache.camel/camel-blueprint/2.24.1</bundle>
+        <bundle>mvn:org.apache.camel/camel-hazelcast/2.24.1</bundle>
+    </feature>
+
+    <feature version="1.0.0" name="aries-jax-rs-whiteboard">
+        <bundle dependency="true">mvn:org.apache.aries.spec/org.apache.aries.javax.jax.rs-api/1.0.1</bundle>
+        <bundle dependency="true">mvn:org.osgi/org.osgi.util.function/1.1.0</bundle>
+        <bundle dependency="true">mvn:org.osgi/org.osgi.util.promise/1.1.0</bundle>
+        <bundle dependency="true">mvn:org.osgi/org.osgi.service.jaxrs/1.0.0</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.annotation-api-1.3/1.3_1</bundle>
+        <bundle>mvn:org.apache.aries.jax.rs/org.apache.aries.jax.rs.whiteboard/1.0.6</bundle>
+    </feature>
+
+    <feature version="1.0.0" name="aries-jax-rs-whiteboard-jackson">
+        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-core/2.9.6</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-annotations/2.9.6</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-databind/2.9.6</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.9.6</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.9.6</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.9.6</bundle>
+        <bundle>mvn:org.apache.aries.jax.rs/org.apache.aries.jax.rs.jackson/1.0.0</bundle>
+    </feature>
+
+    <feature name="shiro" version="1.0.0">
+        <!--        <bundle>mvn:commons-collections/commons-collections/3.2.2</bundle>
+                <bundle>mvn:commons-logging/commons-logging/1.2</bundle>
+                <bundle>mvn:commons-beanutils/commons-beanutils/1.9.4</bundle>
+        &lt;!&ndash;        <bundle>mvn:org.apache.commons/commons-configuration2/2.7</bundle>&ndash;&gt;
+                <bundle>mvn:org.apache.shiro/shiro-lang/1.5.2</bundle>
+                <bundle>mvn:org.apache.shiro/shiro-lang/1.5.2</bundle>
+                <bundle>mvn:org.apache.shiro/shiro-cache/1.5.2</bundle>
+                <bundle>mvn:org.apache.shiro/shiro-crypto-hash/1.5.2</bundle>
+                <bundle>mvn:org.apache.shiro/shiro-crypto-cipher/1.5.2</bundle>
+                <bundle>mvn:org.apache.shiro/shiro-config-core/1.5.2</bundle>
+                <bundle>mvn:org.apache.shiro/shiro-config-ogdl/1.5.2</bundle>
+                <bundle>mvn:org.apache.shiro/shiro-event/1.5.2</bundle>-->
+<!--        <bundle start-level="50">wrap:mvn:org.springframework/spring-aop/5.2.5.RELEASE$Bundle-SymbolicName=spring-aop&amp;Bundle-Version=5.2.5.RELEASE</bundle>-->
+<!--        <bundle>wrap:mvn:org.aopalliance/com.springsource.org.aopalliance/1.0.0$Bundle-SymbolicName=com.springsource.org.aopalliance&amp;Bundle-Version=1.0.0</bundle>-->
+<!--        <bundle>mvn:org.apache.shiro/shiro-root/1.5.2</bundle>-->
+<!--        <bundle>mvn:org.apache.shiro/shiro-lang/1.5.2</bundle>-->
+        <bundle>mvn:commons-collections/commons-collections/3.2.2</bundle>
+        <bundle>mvn:commons-beanutils/commons-beanutils/1.9.4</bundle>
+        <bundle start-level="50">mvn:org.apache.shiro/shiro-core/1.5.2</bundle>
+        <bundle>wrap:mvn:org.owasp.encoder/encoder/1.2.2$Bundle-SymbolicName=org.owasp.encoder&amp;Bundle-Version=1.2.2</bundle>
+        <bundle>mvn:org.apache.shiro/shiro-web/1.5.2</bundle>
+        <bundle>mvn:org.apache.shiro/shiro-cache/1.5.2</bundle>
+        <bundle>mvn:org.apache.shiro/shiro-hazelcast/1.5.2</bundle>
+<!--        <bundle>mvn:org.apache.shiro/shiro-spring/1.5.2</bundle>-->
+    </feature>
+
+    <feature name="platform-dosgi" description="Distributed system setup" version="3.1.0" start-level="50">
+<!--        <bundle>mvn:eu.abeel.platform/dosgi/3.1.0</bundle>-->
+        <feature>cellar</feature>
+        <feature>cellar-dosgi</feature>
+        <feature>cellar-eventadmin</feature>
+
+        <!--        <bundle>mvn:org.apache.karaf.cellar/org.apache.karaf.cellar.bundle/4.1.3</bundle>
+                <bundle>mvn:org.osgi/org.osgi.framework/1.8.0</bundle>
+                <bundle>mvn:org.apache.karaf.cellar/org.apache.karaf.cellar.config/4.1.3</bundle>
+                <bundle>mvn:org.apache.karaf.cellar/org.apache.karaf.cellar.core/4.1.3</bundle>
+                <bundle>mvn:org.apache.karaf.cellar/org.apache.karaf.cellar.dosgi/4.1.3</bundle>
+                <bundle>mvn:org.apache.karaf.cellar/org.apache.karaf.cellar.event/4.1.3</bundle>
+                <bundle>mvn:org.apache.karaf.cellar/org.apache.karaf.cellar.features/4.1.3</bundle>
+                <bundle>wrap:mvn:javax.transaction/jta/1.1</bundle>
+                <bundle>mvn:com.hazelcast/hazelcast-all/3.12.6</bundle>
+                <bundle>mvn:org.apache.karaf.cellar/org.apache.karaf.cellar.hazelcast/4.1.3</bundle>
+                <bundle>mvn:org.apache.karaf.cellar/org.apache.karaf.cellar.kar/4.1.3</bundle>
+                <bundle>mvn:org.apache.karaf.cellar/org.apache.karaf.cellar.shell/4.1.3</bundle>
+                <bundle>mvn:org.apache.karaf.cellar/org.apache.karaf.cellar.utils/4.1.3</bundle>-->
+    </feature>
+
+    <feature name="backend-experiment" version="1.0-SNAPSHOT">
+        <bundle>mvn:backend-experiment/login/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:backend-experiment/api/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:backend-experiment/service/1.0-SNAPSHOT</bundle>
+    </feature>
+
+</features>
